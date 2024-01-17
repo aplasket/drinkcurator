@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "335d66e5-8c1d-4255-a1ba-500174ba1532"
+      }
+    },
+    "owner": "goldensunflower"
   }
 }
