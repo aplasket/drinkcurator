@@ -17,7 +17,7 @@ export const CustomButton = ({label}: ButtonProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 15,
+    paddingTop: 10,
     paddingHorizontal: 45,
   },
   button: {

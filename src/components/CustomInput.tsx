@@ -5,8 +5,6 @@ import { CustomInputProps } from "../types/types";
 const CustomInput = ({label, isPassword}: CustomInputProps): JSX.Element => {
   const [ text, onChangeText ] = useState("");
 
-
-
   return (
     <View>
       <View style={styles.inputWrapper}>
