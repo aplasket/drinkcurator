@@ -1,45 +1,41 @@
 import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { CustomInputProps } from "../types/types";
 
-const CustomInput = (): JSX.Element => {
-  const [ email, setEmail ] = useState("");
-  const [ password, setPassword ] = useState("");
+const CustomInput = ({label, isPassword}: CustomInputProps): JSX.Element => {
+  const [ text, onChangeText ] = useState("");
 
-  const handleSubmit = () => {
-    //check authentication for email and password
-  };
+
 
   return (
-    <View style={styles.inputWrapper}>
-      <TextInput
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        style={styles.inputBox}
-      />
-      <TextInput
-        placeholder="Password"
-        value={password}
-        onChangeText={setPassword}
-        style={styles.inputBox}
-      />
-      <Button title="Login" onPress={handleSubmit}/>
+    <View>
+      <View style={styles.inputWrapper}>
+        <Text style={styles.text}>{label}</Text>
+        <TextInput
+          placeholder={label}
+          value={text}
+          onChangeText={onChangeText}
+          style={styles.inputBox}
+        />
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+  text: {
+    fontSize: 15,
+    fontWeight: "bold",
+  },
   inputWrapper: {
-    flexDirection: 'column',
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 20
+    width: "100%",
+    paddingHorizontal: 45
   },
   inputBox: {
-    width: 200,
     borderColor: "purple",
     borderRadius: 12,
     borderWidth: 2,
+    height: 50,
     padding: 12,
     marginBottom: 8
   },
