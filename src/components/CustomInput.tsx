@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { Text, TextInput, View } from "react-native";
 import { CustomInputProps } from "../types/types";
+import { styles } from "../styles/styles";
 
 const CustomInput = ({label, isPassword}: CustomInputProps): JSX.Element => {
   const [ text, onChangeText ] = useState("");
@@ -8,7 +9,7 @@ const CustomInput = ({label, isPassword}: CustomInputProps): JSX.Element => {
   return (
     <View>
       <View style={styles.inputWrapper}>
-        <Text style={styles.text}>{label}</Text>
+        <Text style={styles.inputText}>{label}</Text>
         <TextInput
           placeholder={label}
           value={text}
@@ -18,26 +19,6 @@ const CustomInput = ({label, isPassword}: CustomInputProps): JSX.Element => {
       </View>
     </View>
   )
-}
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 15,
-    fontWeight: "bold",
-  },
-  inputWrapper: {
-    width: "100%",
-    paddingHorizontal: 45
-  },
-  inputBox: {
-    borderColor: "purple",
-    borderRadius: 12,
-    borderWidth: 2,
-    height: 50,
-    padding: 12,
-    marginBottom: 8
-  },
-});
-
+};
 
 export default CustomInput;
