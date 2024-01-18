@@ -1,5 +1,6 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { ButtonProps } from "../types/types";
+import { styles } from "../styles/styles";
 
 export const CustomButton = ({label}: ButtonProps) => {
   const handleSubmit = () => {
@@ -7,28 +8,10 @@ export const CustomButton = ({label}: ButtonProps) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.buttonContainer}>
     <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-      <Text style={styles.text}>{label}</Text>
+      <Text style={styles.buttonText}>{label}</Text>
     </TouchableOpacity>
   </View>
   )
-}
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 10,
-    paddingHorizontal: 45,
-  },
-  button: {
-    alignItems: 'center',
-    borderRadius: 12,
-    backgroundColor: '#FFC463',
-    paddingVertical: 10,
-    width: '50%'
-  },
-  text:{
-    fontSize: 14,
-    fontWeight: 'bold',
-  }
-});
+};
