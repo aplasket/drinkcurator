@@ -1,38 +1,18 @@
-import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import CustomInput from './src/components/CustomInput';
-import { CustomButton } from "./src/components/CustomButton";
-import { styles } from './src/styles/styles';
+import { SafeAreaView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Login } from './src/screens/Login';
+import { Signup } from './src/screens/Signup';
 
-// Main Tabs bottom navigation
-
-
-// --- Onboarding screens ---
-
-
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <SafeAreaView >
-      {/* image container */}
-      <View style={styles.imageContainer}>
-        <Image source={require('./assets/drinksanimated.gif')} style={styles.imageStyle}/>
-        <Text style={styles.appTitle}>Drink Curator</Text>
-      </View>
-      {/* sign in component*/}
-      <View style={styles.inputWrapper}>
-        <CustomInput label={"Email"} />
-        <CustomInput label={"Password"} isPassword={true}/>
-        <CustomButton label={"login"}/>
-        <View style={styles.questionTextContainer}>
-          <Text>Don't Have an Account?</Text>
-          <TouchableOpacity >
-            <Text style={styles.clickableText}>SignUp</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-      {/* stack navigation <Sign Up /> */}
-      {/* Tab Navigation <Main /> */}
-
-    </SafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Signup" component={Signup} />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 };
