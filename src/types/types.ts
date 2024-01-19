@@ -27,3 +27,9 @@ export interface basicIdea {
 export type FormProps = {
   addIdea: (idea: basicIdea) => void;
 }
+
+export type IdeaProps = {
+  ideaList: basicIdea[];
+  // upvote: (id: number) => void;
+  // downvote: (id: number) => void;
+};
