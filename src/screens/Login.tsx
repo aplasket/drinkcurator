@@ -3,8 +3,6 @@ import CustomInput from '../components/CustomInput';
 import { CustomButton } from "../components/CustomButton";
 import { styles } from '../styles/styles';
 import { screenProps } from '../types/types';
-import { Main } from './Main';
-import { RootStackParamList } from "../types/types";
 
 
 export const Login = ({ navigation }: screenProps) => {
