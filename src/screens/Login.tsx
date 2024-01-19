@@ -3,6 +3,9 @@ import CustomInput from '../components/CustomInput';
 import { CustomButton } from "../components/CustomButton";
 import { styles } from '../styles/styles';
 import { screenProps } from '../types/types';
+import { Main } from './Main';
+import { RootStackParamList } from "../types/types";
+
 
 export const Login = ({ navigation }: screenProps) => {
   return (
@@ -14,7 +17,7 @@ export const Login = ({ navigation }: screenProps) => {
       <View style={styles.inputWrapper}>
         <CustomInput label={"Email"} />
         <CustomInput label={"Password"} isPassword={true}/>
-        <CustomButton label={"login"}/>
+        <CustomButton label={"login"} navigation={navigation} route={"Main"} />
         <View style={styles.questionTextContainer}>
           <Text>Don't Have an Account?</Text>
           <TouchableOpacity>
