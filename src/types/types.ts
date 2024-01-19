@@ -8,12 +8,14 @@ export type CustomInputProps = {
 
 export interface ButtonProps extends TouchableOpacityProps {
   label: string;
-};
-
+  navigation: screenProps["navigation"];
+  route: screenProps["route"]["params"];
+}
 
 export type RootStackParamList = {
   Login: undefined;
   Signup: undefined;
+  Main: undefined;
 };
 
 export type screenProps = NativeStackScreenProps<RootStackParamList>;
