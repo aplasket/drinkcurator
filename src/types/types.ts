@@ -12,8 +12,8 @@ export interface ButtonProps extends TouchableOpacityProps {
 
 
 export type RootStackParamList = {
-  Login: {};
-  Signup: {};
+  Login: undefined;
+  Signup: undefined;
 };
 
 export type screenProps = NativeStackScreenProps<RootStackParamList>;
