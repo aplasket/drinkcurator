@@ -3,6 +3,7 @@ import IdeaForm from "../components/IdeaForm"
 import { useState } from "react"
 import { basicIdea } from "../types/types"
 import { styles } from "../styles/styles"
+import Ideas from "../components/Ideas"
 
 export const Home = () => {
   const [ideaList, setIdeaList] = useState<basicIdea[]>([]);
@@ -13,10 +14,15 @@ export const Home = () => {
 
   return (
     <SafeAreaView style={styles.homeContainer}>
-      <IdeaForm addIdea={addIdea} />
+      <View style={styles.ideaInputWrapper}>
+        <IdeaForm addIdea={addIdea} />
+      </View>
       <View style={styles.ideaContainer}>
-        <Text style={styles.appTitle}>All Ideas: </Text>
+        <Text style={styles.homeTitle}>All Ideas: </Text>
         {!ideaList.length && <Text style={styles.clickableText}>No ideas, let's add some!</Text>}
+        <View style={styles.cardsContainer}>
+          <Ideas ideaList={ideaList} />
+        </View>
       </View>
     </SafeAreaView>
   )
