@@ -19,3 +19,11 @@ export type RootStackParamList = {
 };
 
 export type screenProps = NativeStackScreenProps<RootStackParamList>;
+
+export interface basicIdea {
+  text: string;
+}
+
+export type FormProps = {
+  addIdea: (idea: basicIdea) => void;
+}

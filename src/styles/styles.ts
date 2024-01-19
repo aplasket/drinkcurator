@@ -57,7 +57,20 @@ export const styles = StyleSheet.create({
   clickableText: {
     paddingLeft: 5,
     fontWeight: 'bold',
-    color: "#FFC463"
+    color: "purple",
+    fontSize: 16,
+    textShadowColor: "white",
+    textShadowOffset: { width: 1, height: 2},
+    textShadowRadius: 2,
+  },
+  ideaContainer: {
+    alignContent: 'center',
+    paddingTop: 14,
+    flex: 1,
+  },
+  homeContainer: {
+    flex: 1,
+    marginTop: "20%",
   }
 
 
