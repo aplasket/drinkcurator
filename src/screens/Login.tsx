@@ -9,8 +9,8 @@ export const Login = ({ navigation }: screenProps) => {
   return (
     <SafeAreaView >
       <View style={styles.imageContainer}>
-        <Image source={require('../../assets/drinksanimated.gif')} style={styles.imageStyle}/>
-        <Text style={styles.appTitle}>Drink Curator</Text>
+        <Image source={require('../../assets/whatdowedo.gif')} style={styles.imageStyle}/>
+        <Text style={styles.appTitle}>✨ Cheers ✨</Text>
       </View>
       <View style={styles.inputWrapper}>
         <CustomInput label={"Email"} />
