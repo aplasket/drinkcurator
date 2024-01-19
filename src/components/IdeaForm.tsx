@@ -5,6 +5,7 @@ import { FormProps, basicIdea } from "../types/types";
 
 const IdeaForm = ({ addIdea }: FormProps) => {
   const [ idea, setIdea ] = useState("");
+  const maxTextLength = 50;
 
   const handleSubmit = () => {
     const newIdea: basicIdea = {
@@ -22,15 +23,19 @@ const IdeaForm = ({ addIdea }: FormProps) => {
   }
 
   return(
-    <View style={styles.inputWrapper}>
+    <View >
       <TextInput
         placeholder="Enter an idea"
         value={idea}
-        onChangeText={setIdea}
-        style={styles.inputBox}
+        onChangeText={(text) => text.length <= maxTextLength && setIdea(text)} // Limit the input length
+        style={styles.ideaInputBox}
+        maxLength={maxTextLength}
       />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText} onPress={handleSubmit}>Submit</Text>
+      {idea.length >= maxTextLength && (
+        <Text style={styles.errorText}>Character limit reached!</Text>
+      )}
+      <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+        <Text style={styles.buttonText}>Submit</Text>
       </TouchableOpacity>
     </View>
   )
