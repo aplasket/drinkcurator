@@ -62,16 +62,54 @@ export const styles = StyleSheet.create({
     textShadowColor: "white",
     textShadowOffset: { width: 1, height: 2},
     textShadowRadius: 2,
+    textAlign: "center",
   },
   ideaContainer: {
     alignContent: 'center',
-    paddingTop: 14,
-    flex: 1,
+    marginHorizontal: 24,
+    marginVertical: 8,
+    flexDirection: 'column',
   },
   homeContainer: {
+    marginTop: 65,
     flex: 1,
-    marginTop: "20%",
-  }
-
-
+  },
+  card: {
+    padding: 12,
+    marginTop: 8,
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderRadius: 12,
+    borderColor: 'purple',
+    shadowColor: '#FFC463',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  errorText: {
+    color: 'red'
+  },
+  ideaInputWrapper: {
+    paddingHorizontal: 15,
+    justifyContent: 'center', // Align children vertically centered
+  },
+  ideaInputBox: {
+    borderColor: "purple",
+    borderRadius: 12,
+    borderWidth: 2,
+    height: 50,
+    padding: 12,
+    marginBottom: 8
+  },
+  cardsContainer: {
+    padding: 12,
+  },
+  homeTitle: {
+      textAlign: "center",
+      fontSize: 24,
+      fontWeight: "bold",
+      padding: 10,
+  },
 });
